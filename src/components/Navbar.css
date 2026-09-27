@@ -1,0 +1,131 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  min-height: 64px;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-weight: 700;
+  font-size: var(--fs-md);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.nav__brand:hover {
+  color: var(--navy);
+}
+
+.nav__mark {
+  display: flex;
+  color: var(--brown);
+}
+
+.nav__toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-1);
+  width: 44px;
+  height: 40px;
+  padding: 0 var(--sp-2);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease);
+}
+
+.nav__toggle:hover {
+  border-color: var(--navy);
+}
+
+.nav__toggle span {
+  display: block;
+  height: 2px;
+  background: var(--navy);
+  border-radius: var(--rule);
+}
+
+.nav__links {
+  display: none;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.nav__links a {
+  padding: var(--sp-2) var(--sp-1);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--body);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.nav__links a:hover {
+  color: var(--navy);
+}
+
+.nav__links.is-open {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  animation: nav-fade var(--dur) var(--ease);
+}
+
+@keyframes nav-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 900px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__links,
+  .nav__links.is-open {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-6);
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    animation: none;
+  }
+
+  .nav__links a {
+    padding: var(--sp-1) 0;
+    font-size: var(--fs-sm);
+  }
+}

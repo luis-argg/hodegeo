@@ -1,0 +1,32 @@
+.about__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--line);
+}
+
+.about__list h3 {
+  margin-bottom: var(--sp-2);
+  font-size: var(--fs-lg);
+}
+
+.about__list h3::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: var(--rule);
+  margin-bottom: var(--sp-3);
+  background: var(--brown);
+}
+
+.about__list p {
+  font-size: var(--fs-base);
+}
+
+@media (min-width: 768px) {
+  .about__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

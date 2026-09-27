@@ -1,0 +1,92 @@
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.hw__table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+.hw__table th,
+.hw__table td {
+  padding: var(--sp-3) var(--sp-4);
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.hw__table thead th {
+  background: var(--sage);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.hw__table tbody th {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.hw__table td {
+  color: var(--body);
+}
+
+.hw__table tbody tr:last-child th,
+.hw__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.hw__subtitle {
+  margin: var(--sp-8) 0 var(--sp-4);
+  font-size: var(--fs-lg);
+}
+
+.hw__inventory {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-2);
+}
+
+.hw__inventory li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.hw__name {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hw__tag {
+  padding: var(--sp-1) var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--sage);
+  border-radius: var(--radius-pill);
+}
+
+@media (min-width: 768px) {
+  .hw__inventory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
